@@ -235,14 +235,9 @@ def generar_pdf(page_title, selected_teams, team_id, tabla_headers_eficiencia, t
     page_width = pdf.w - 2 * pdf.l_margin
     current_y = pdf.get_y()
 
-    # Indicamos dónde guardar el PDF generado
-    output_folder = os.path.join(os.getcwd(), "assets") 
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-
-    # Nombre del pdf de performance
-    filename = f"performance_report_test.pdf"
-    filepath = os.path.join(output_folder, filename)
+    # Guarda el PDF generado en la carpeta 'assets'
+    filename = "performance_report_test.pdf"
+    filepath = os.path.join("assets", filename)
     pdf.output(filepath)
 
     print("Guardando PDF en:", filepath)

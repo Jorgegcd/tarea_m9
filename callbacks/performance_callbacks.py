@@ -688,11 +688,11 @@ def exportar_pdf(n_clicks, temporada, team_id, wl_filter, start_date, end_date):
 
     # Se genera pdf
     try:
-        ruta_pdf = generar_pdf(page_title, nombre_equipo_str, team_id, tabla_headers_rating, tabla_data_rating, tabla_headers_cuatro_factores,
-                           tabla_data_cuatro_factores, rutas_imagenes=rutas_imagenes, descripcion_contexto=descripcion_contexto)
+        generar_pdf(page_title, nombre_equipo_str, team_id, tabla_headers_rating, tabla_data_rating, tabla_headers_cuatro_factores,
+                    tabla_data_cuatro_factores, rutas_imagenes=rutas_imagenes, descripcion_contexto=descripcion_contexto)
     except Exception as e:
         print("Error al generar el PDF:", e)
         return "-", {"display": "none"}
-    href_pdf = "/" + ruta_pdf
-
+    
+    href_pdf = f"/assets/performance_report_test.pdf"
     return href_pdf, {"display": "inline-block"}
