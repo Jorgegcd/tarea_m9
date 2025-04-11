@@ -19,8 +19,8 @@ def handle_login(n_clicks, username, password):
 
     if username in VALID_USERNAME_PASSWORD and VALID_USERNAME_PASSWORD[username] == password:
         user = User(username)
-        login_user(user, remember=True, duration=timedelta(days=30))
-        session.permanent = True
+        login_user(user, remember=False)
+        session.permanent = False
         return "/home", ""  # Redirige correctamente al dashboard
     else:
         return no_update, "Usuario o contraseña incorrectos"

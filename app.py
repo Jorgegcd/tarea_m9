@@ -34,7 +34,7 @@ server.config.update(
     SESSION_COOKIE_SECURE=False, 
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SAMESITE='Lax',
-    SESSION_REFRESH_EACH_REQUEST=True
+    SESSION_REFRESH_EACH_REQUEST=False
 )
 
 # Configuramos el Flask-Login
