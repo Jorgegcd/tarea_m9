@@ -1,0 +1,102 @@
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Estilo de tarjetas */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Estilo nav bar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+/* Gráficos */
+.js-plotly-plot {
+    border-radius: 8px;
+    background-color: white;
+    padding: 10px;
+}
+
+.dash-table-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+}
+
+.dash-table-container .dash-header {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dash-table-container .dash-cell {
+    text-align: center;
+    padding: 8px;
+}
+
+/* Alternancia de filas (zebra stripes) */
+.dash-table-container .dash-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Dropdowns */
+.Select-control {
+    border-radius: 6px;
+}
+
+/* Login Form */
+.login-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Gráficos responsive */
+.grafico-responsive .js-plotly-plot .main-svg text {
+    font-size: 20px; /* valor por defecto */
+}
+
+@media (max-width: 768px) {
+    .grafico-responsive .js-plotly-plot .main-svg text {
+        font-size: 14px; /* para móviles o pantallas estrechas */
+    }
+}
