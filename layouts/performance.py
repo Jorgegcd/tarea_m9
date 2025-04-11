@@ -24,7 +24,26 @@ def performance_layout():
             ], width=8),
             dbc.Col([
                 dbc.Button("Exportar a PDF", id="export-pdf-button", color="primary", className="mt-4"),
-                html.A("Descargar PDF",id="pdf-download-link",href="",target="_blank",style={"display": "none"})
+                dbc.Row([
+                    dbc.Col([
+                        html.Div([
+                            html.A(
+                                dbc.Button([
+                                    html.I(className="fas fa-file-download me-2"),
+                                    "Descargar PDF"
+                                ],
+                                color="info",
+                                id="boton-descargar-pdf",
+                                className="w-100"),
+                                id="pdf-download-link",
+                                href="",
+                                target="_blank",
+                                download="informe_equipo.pdf",
+                                style={"display": "none"}
+                            )
+                        ], className="d-flex justify-content-center mt-2")
+                    ])
+                ])
             ], width=4)
         ], className="mb-4"),
         
