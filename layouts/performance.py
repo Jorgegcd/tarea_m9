@@ -21,32 +21,31 @@ def performance_layout():
                     ],
                     placeholder="Selecciona una temporada"
                 )
-            ], width=8),
+            ], width=6),
             dbc.Col([
-                dbc.Row([
-                    dbc.Col(
-                        dbc.Button("Exportar a PDF", id="export-pdf-button", color="primary", className="mt-4"),
-                        width = 6
-                    ),
-                    dbc.Col(
-                        html.A(
-                            dbc.Button([
-                                html.I(className="fas fa-file-download me-2"),"Descargar PDF"
-                                    ],
-                                    color="info",
-                                    id="boton-descargar-pdf",
-                                    className="w-100"),
-                                    id="pdf-download-link",
-                                    href="",
-                                    target="_blank",
-                                    download="informe_equipo.pdf",
-                                    style={"display": "none"}
-                                ),
-                                width = 6                    
-                            )
-                        ], className="g-2 mt-4")
-                    ])
-                ], className="mb-4"),
+                dbc.Label(" "),
+                dbc.Button("Exportar a PDF", id="export-pdf-button", color="primary", className="w-100"),
+            ], width = 2, align="end"),
+            
+            dbc.Col([
+                dbc.Label(" "),
+                html.A(
+                    dbc.Button([
+                        html.I(className="fas fa-file-download me-2"),"Descargar PDF"
+                                ],
+                                color="info",
+                                id="boton-descargar-pdf",
+                                className="w-100"),
+                                id="pdf-download-link",
+                                href="",
+                                target="_blank",
+                                download="informe_equipo.pdf",
+                                style={"display": "none"}
+                            )                        
+                        ],width = 2, align="end"),
+                    ], className="mb-4"),               
+                            
+
         
         # Generamos los filtros de equipo, fechas y resultado
         dbc.Row([
