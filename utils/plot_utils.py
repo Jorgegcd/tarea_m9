@@ -228,7 +228,7 @@ def generar_radar_figure(season, team_id, start_date, end_date, wl_filter):
         name='Equipo',
         line=dict(color='steelblue'),
         mode='lines+markers',
-        text=[f"{equipo[k]:.1f}%" for k in equipo],
+        text=[f"{equipo[k]:.1f}%" for k in equipo] + [f"{equipo[metricas[0]]:.1f}%"],
         textposition='top center',
         hovertemplate=f"<b>{nombre_equipo_str}</b><br>Métrica: %{{theta}}<br>Valor: %{{text}}<extra></extra>"
     ))
@@ -241,7 +241,7 @@ def generar_radar_figure(season, team_id, start_date, end_date, wl_filter):
         name='Rival',
         line=dict(color='tomato'),
         mode='lines+markers',
-        text=[f"{rival[k]:.1f}%" for k in rival],
+        text=[f"{rival[k]:.1f}%" for k in rival] + [f"{rival[metricas[0]]:.1f}%"],
         textposition='top center',
         hovertemplate=f"<b>Rivales de: {nombre_equipo_str}</b><br>Métrica: %{{theta}}<br>Valor: %{{text}}<extra></extra>"
     ))
