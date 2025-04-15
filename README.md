@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 7cdfeaaa2eb802e966a7c08aebdc32409f157f75
 # Basketball Analytics Dashboard
 
 Dashboard interactivo desarrollado con **Dash**, **Plotly** y **Flask-Login** para el análisis de rendimiento y salud de jugadores de baloncesto.
@@ -61,7 +58,6 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-<<<<<<< HEAD
 
 ### 4. Verifica que existe la carpeta `cache-directory`
 
@@ -128,5 +124,3 @@ Password: admin
 - SQLite
 - FPDF
 - Flask-Caching
-=======
->>>>>>> 7cdfeaaa2eb802e966a7c08aebdc32409f157f75
