@@ -220,10 +220,19 @@ def generar_radar_figure(season, team_id, start_date, end_date, wl_filter):
 
     metricas = list(equipo.keys())
 
+    # Validamos que no haya NaN en los valores
+    r = [v if v is not None and not pd.isna(v) else 0 for v in team_normalized]
+    rival_r = [v if v is not None and not pd.isna(v) else 0 for v in rival_normalized]
+
+    # Cerramos el polígono repitiendo el primer punto
+    r += [r[0]]
+    rival_r += [rival_r[0]]
+    theta = metricas + [metricas[0]]
+
     # Generamos radar del equipo
     fig.add_trace(go.Scatterpolar(
-        r=team_normalized + [team_normalized[0]],
-        theta=metricas + [metricas[0]],
+        r=r,
+        theta=theta,
         fill='toself',
         name='Equipo',
         line=dict(color='steelblue'),
@@ -235,8 +244,8 @@ def generar_radar_figure(season, team_id, start_date, end_date, wl_filter):
 
     # Generamos radar de los rivales
     fig.add_trace(go.Scatterpolar(
-        r=rival_normalized + [rival_normalized[0]],
-        theta=metricas + [metricas[0]],
+        r=rival_r,
+        theta=theta,
         fill='toself',
         name='Rival',
         line=dict(color='tomato'),
