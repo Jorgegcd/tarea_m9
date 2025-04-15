@@ -218,10 +218,12 @@ def generar_radar_figure(season, team_id, start_date, end_date, wl_filter):
     nombre_equipo_row = teams[teams["team_id"] == team_id] # Sacamos el id del equipo
     nombre_equipo_str = nombre_equipo_row["team_name"].values[0] if not nombre_equipo_row.empty else f"Equipo {team_id}" # Sacamos el nombre en base del id
 
+    metricas = list(equipo.keys())
+
     # Generamos radar del equipo
     fig.add_trace(go.Scatterpolar(
-        r=team_normalized,
-        theta=list(equipo.keys()),
+        r=team_normalized + [team_normalized[0]],
+        theta=metricas + [metricas[0]],
         fill='toself',
         name='Equipo',
         line=dict(color='steelblue'),
@@ -233,8 +235,8 @@ def generar_radar_figure(season, team_id, start_date, end_date, wl_filter):
 
     # Generamos radar de los rivales
     fig.add_trace(go.Scatterpolar(
-        r=rival_normalized,
-        theta=list(rival.keys()),
+        r=rival_normalized + [rival_normalized[0]],
+        theta=metricas + [metricas[0]],
         fill='toself',
         name='Rival',
         line=dict(color='tomato'),
