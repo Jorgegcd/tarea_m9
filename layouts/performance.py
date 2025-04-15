@@ -43,8 +43,7 @@ def performance_layout():
                                 style={"display": "none"}
                             )                        
                         ],width = 2, align="end"),
-                    ], className="mb-4"),               
-                            
+                    ], className="mb-4"),                                   
 
         
         # Generamos los filtros de equipo, fechas y resultado

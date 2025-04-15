@@ -685,7 +685,6 @@ def exportar_pdf(n_clicks, temporada, team_id, wl_filter, start_date, end_date):
     else:
         descripcion_contexto += " de la temporada"
 
-
     # Se genera pdf
     try:
         generar_pdf(page_title, nombre_equipo_str, team_id, tabla_headers_rating, tabla_data_rating, tabla_headers_cuatro_factores,
