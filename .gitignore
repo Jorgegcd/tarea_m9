@@ -1,13 +1,35 @@
-# Ignora el entorno virtual
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Entorno virtual
+env/
+venv/
 .venv/
 
-# Archivos de caché de Python
-__pycache__/
-*.pyc
+# Archivos de configuración
+.env
+*.db
+*.sqlite3
 
-# Archivos de configuración del sistema
-.DS_Store
-
-# Archivos temporales
+# Archivos de logs
 *.log
-*.tmp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Cachés y temporales
+*.swp
+*.bak
+
+# Archivos de imágenes o exportaciones si no querés subirlos
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# Carpeta de Dash para assets si tenés cosas pesadas
+/assets/*
+!assets/*.css
